@@ -1,6 +1,6 @@
 import cv2
 import time
-from src.detector import detect_and_annotate_people
+from src.detector import detect_and_annotate_people_and_vehicles
 from src.traffic_signal import get_traffic_light_status
 from src.drawing import draw_boundary_lines, draw_text
 
@@ -29,13 +29,13 @@ while cap.isOpened():
     else:
         frame = draw_text(frame, "GREEN LIGHT", (50, 50), font_size=25, color=(0, 255, 0))
 
-    # Run person detection and annotations
-    frame = detect_and_annotate_people(frame, signal, left_line, right_line)
+    # Run person and vehicle detection and annotations
+    frame = detect_and_annotate_people_and_vehicles(frame, signal, left_line, right_line)
 
     cv2.imshow("Crosswalk Assistance", frame)
-    out.write(frame)  # Save each frame to the output file
+    out.write(frame)
 
-    if cv2.waitKey(1) & 0xFF == 27: # ESC key to exit
+    if cv2.waitKey(1) & 0xFF == 27:  # ESC key
         break
 
 cap.release()
