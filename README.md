@@ -1,3 +1,4 @@
+
 # 🛑 Crosswalk Detection and Traffic Signal Assistance System
 
 A real-time crosswalk detection system that recognizes both pedestrians and vehicles using YOLOv8, and provides visual safety feedback based on simulated traffic light logic.
@@ -7,8 +8,8 @@ A real-time crosswalk detection system that recognizes both pedestrians and vehi
 ## 📽 Demo
 
 <div align="center">
-  <img src="demo_original.gif" width="45%" alt="Original CCTV">
-  <img src="demo_result.gif" width="45%" alt="Detection Result">
+  <img src="data/crosswalk_cctv_orig.gif" width="45%" alt="Original CCTV">
+  <img src="data/crosswalk_cctv_result.gif" width="45%" alt="Detection Result">
   <p><i>Left: Original input footage | Right: System output with annotations</i></p>
 </div>
 
@@ -28,22 +29,23 @@ This system simulates an urban crosswalk equipped with traffic signals and compu
 
 ## 📂 Project Structure
 
+```
 .
 ├── main.py
 ├── src/
-│ ├── detector.py
-│ ├── drawing.py
-│ └── traffic_signal.py
+│   ├── detector.py
+│   ├── drawing.py
+│   └── traffic_signal.py
 ├── models/
-│ └── yolov8m.pt
+│   └── yolov8m.pt
 ├── data/
-│ ├── crosswalk_cctv.mp4
-│ └── result.mp4
-├── demo_original.gif
-├── demo_result.gif
+│   ├── crosswalk_cctv.mp4
+│   ├── result.mp4
+│   ├── crosswalk_cctv_orig.gif
+│   └── crosswalk_cctv_result.gif
 ├── LICENSE
 └── README.md
-
+```
 
 ---
 
@@ -53,27 +55,37 @@ This system simulates an urban crosswalk equipped with traffic signals and compu
 
 ```bash
 pip install ultralytics opencv-python pillow
+```
 
-Place crosswalk_cctv.mp4 in data/ and yolov8m.pt in models/.
+2. Place `crosswalk_cctv.mp4` in `data/` and `yolov8m.pt` in `models/`.
 
-Run the system:
+3. Run the system:
 
-bash
+```bash
 python main.py
-Press ESC to exit. The result will be saved as data/result.mp4.
+```
 
-🧠 Key Features
-✅ YOLOv8 detection for both pedestrians and vehicles
+4. Press `ESC` to exit. The result will be saved as `data/result.mp4`.
 
-✅ Safety feedback: "CROSS!" / "DANGER!" / "STOP" / "GO"
+---
 
-✅ English font rendering, no font file dependencies
+## 🧠 Key Features
 
-✅ Lightweight, modular, maintainable
+- ✅ YOLOv8 detection for both pedestrians and vehicles
+- ✅ Safety feedback: "CROSS!" / "DANGER!" / "STOP" / "GO"
+- ✅ English font rendering, no font file dependencies
+- ✅ Lightweight, modular, maintainable
 
-🔗 Reference
-Inspired by DMU Computer Vision – CrossWalk CCTV, but fully refactored with modular structure, new logic, and improved annotations.
-ChatGPT 4o
+---
 
-📜 License
-This project is licensed under the MIT License.
+## 🔗 Reference
+
+Inspired by [DMU Computer Vision – CrossWalk CCTV], but fully refactored with modular structure, new logic, and improved annotations.
+
+ChatGPT 4o 
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
